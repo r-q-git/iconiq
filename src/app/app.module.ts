@@ -11,6 +11,8 @@ import { RowComponent } from './components/row/row.component';
 import { BoxComponent } from './components/box/box.component';
 import { TabbarComponent } from './components/tabbar/tabbar.component';
 import { TabComponent } from './components/tab/tab.component';
+import { provideHttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,9 +28,10 @@ import { TabComponent } from './components/tab/tab.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
