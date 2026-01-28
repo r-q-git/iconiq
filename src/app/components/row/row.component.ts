@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-row',
@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   ]
 })
 export class RowComponent {
+  @Input() heading:string = "";
   list = ["apple", "mango","apple", "mango","apple", "apple", "mango"]
 }

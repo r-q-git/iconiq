@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   ]
 })
 export class GridComponent {
-  list = ["apple", "mango","mango" ]
+  headings = ["AI", "Heart", "Moon", "Star" ]
 }
