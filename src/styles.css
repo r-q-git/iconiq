@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.luxurious-script-regular {
+  font-family: "Luxurious Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html,
+body {
+/* Hide both horizontal and vertical scrollbars /
+/* WebKit (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+    display: none;
+  }
+
+/* Firefox */
+scrollbar-width: none;
+  -ms-overflow-style: none;
+}
