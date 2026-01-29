@@ -13,6 +13,7 @@ import { TabbarComponent } from './components/tabbar/tabbar.component';
 import { TabComponent } from './components/tab/tab.component';
 import { provideHttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { SearchrowComponent } from './components/searchrow/searchrow.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     BoxComponent,
     TabbarComponent,
     TabComponent,
+    SearchrowComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideHttpClient()],

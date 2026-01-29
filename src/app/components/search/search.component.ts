@@ -8,9 +8,16 @@ import { IconServiceService } from 'src/services/icon-service.service';
 })
 export class SearchComponent {
   public iconName: string = '';
+  public isSearch: boolean = false;
   iconService: IconServiceService = inject(IconServiceService);
 
   handleSearch(): void {
     this.iconService.setSearchWord(this.iconName);
+    this.iconService.setSearchStatus();
+    this.iconService.isSearch$.subscribe((value) => (this.isSearch = value));
+  }
+
+  handleCross() {
+    this.iconName = "";
   }
 }

@@ -13,4 +13,11 @@
   >
     Search
   </button>
+  <button
+    *ngIf="isSearch"
+    (click)="handleCross()"
+    class="border px-2 py-1 text-red-600"
+  >
+    X
+  </button>
 </div>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
 import { Icon, IconResponse } from 'src/models/icon.model';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +11,8 @@ export class IconServiceService {
   public isSearch: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
     false,
   );
+  public isSearch$ = this.isSearch.asObservable();
+
   public searchWord: BehaviorSubject<string> = new BehaviorSubject<string>('');
   public searchWord$ = this.searchWord.asObservable();
 
@@ -20,7 +22,26 @@ export class IconServiceService {
   constructor(private http: HttpClient) {}
 
   setSearchWord(word: string) {
+    console.log(word);
     this.searchWord.next(word);
+  }
+
+  setSearchStatus() {
+    this.isSearch.next(true);
+    console.log(this.isSearch);
+  }
+
+  getIconBySearch(word: string) {
+    return this.http.get<IconResponse>(
+      environment.familyUrl + word + '&limit=7&productTier=free&style=solid',
+      {
+        withCredentials: true,
+        headers: {
+          accept: 'application/json',
+          'x-api-key': environment.apiKey,
+        },
+      },
+    );
   }
 
   getfamilyTrendingIcons(family: string) {

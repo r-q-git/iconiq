@@ -1,6 +1,16 @@
 <div class="flex flex-col items-start justify-center p-8 min-h-screen w-full">
-   <div class="flex items-center justify-center w-full"><app-search></app-search></div> 
+  <div class="flex items-center justify-center w-full">
+    <app-search></app-search>
+  </div>
+  <div *ngIf="isSearch; else trending" class="flex flex-col items-start justify-center gap-3 p-8 ">
+    <div class="font-bold text-3xl ">
+      Searched Icons for : {{ searchWord }}
+    </div>
+    <app-searchrow [heading]="searchWord"></app-searchrow>
+  </div>
+  <ng-template #trending>
     <app-tabbar></app-tabbar>
     <div class="ml-8 font-bold text-3xl border-b-2">Trending Icons</div>
     <app-grid class="w-full"></app-grid>
+  </ng-template>
 </div>

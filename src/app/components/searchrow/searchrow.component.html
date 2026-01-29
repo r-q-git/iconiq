@@ -1,0 +1,12 @@
+<div class="flex flex-col justify-center gap-8 relative">
+  <h2 class="text-2xl font-bold border-b-2 p-2">{{ heading }}</h2>
+  <div class="flex items-center justify-center gap-8">
+    <app-box *ngFor="let obj of iconsArray" [iconObj]="obj"></app-box>
+  </div>
+</div>
+<button
+  class="border px-2 py-1 text-red-600 absolute top-[7rem] right-10"
+  (click)="handleSearchWindowCloseButton()"
+>
+  <span class="text-black">Close Search Window</span> X
+</button>
