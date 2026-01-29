@@ -9,27 +9,13 @@ import { IconServiceService } from 'src/services/icon-service.service';
 })
 export class RowComponent {
   @Input() heading: string = '';
-  @Input() isSearch: boolean = false;
-  iconObj: Icon = {
-    hash: '',
-    name: '',
-    imagePreviewUrl: '',
-    isFree: false,
-    familySlug: '',
-    familyName: '',
-    categorySlug: '',
-    categoryName: '',
-    subcategorySlug: '',
-    subcategoryName: '',
-  };
-  list = ['apple', 'mango', 'apple', 'mango', 'apple', 'apple', 'mango'];
+  iconsArray: Icon[] = [];
 
-  constructor(private iconService : IconServiceService){
+  constructor(private iconService: IconServiceService) {}
 
+  ngOnInit() {
+    this.iconService
+      .getfamilyTrendingIcons(this.heading)
+      .subscribe((array) => (this.iconsArray = array.results));
   }
-
-  
-
-
-
 }

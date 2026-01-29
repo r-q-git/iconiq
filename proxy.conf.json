@@ -1,6 +1,6 @@
 {
   "/v1": {
-    "target": "https://public-api.streamlinehq.com",
+    "target": "https://api.streamlinehq.com",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"

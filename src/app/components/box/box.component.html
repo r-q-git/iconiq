@@ -2,7 +2,7 @@
   class="w-44 h-44 p-2 border rounded bg-gray-50 relative hover:bg-[#1775cd]"
 >
   <div class="w-full h-full p-2 border rounded bg-white">
-    <img src="/assets/sample_icon.webp" alt="" class="w-full h-full" />
+    <img [src]="iconObj.imagePreviewUrl" alt="" class="w-full h-full" />
   </div>
   <div class="flex items-center justify-center gap-2 absolute right-1 bottom-1">
     <a
@@ -10,7 +10,10 @@
       class="w-8 h-8 border-2 border-black text-center text-xl rounded hover:text-white hover:bg-black"
       >+</a
     >
-    <a href="" class="w-8 h-8 border-2 border-black rounded p-1 hover:bg-black"
+    <a
+      (click)="onDownloadButton(iconObj.hash, iconObj.name)"
+      download="icon.svg"
+      class="w-8 h-8 border-2 border-black rounded p-1 hover:bg-black"
       ><img
         src="/assets/download.png"
         alt="download"

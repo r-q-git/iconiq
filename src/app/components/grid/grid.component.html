@@ -1,12 +1,5 @@
 <div class="flex flex-col items-start p-8 gap-5">
-  <div *ngIf="!isSearch">
-    <app-row
-      *ngFor="let heading of headings"
-      [heading]="heading"
-      [isSearch]="isSearch"
-    ></app-row>
-  </div>
-  <div *ngIf="isSearch">
-    <app-row [isSearch]="isSearch"> </app-row>
+  <div>
+    <app-row *ngFor="let heading of list" [heading]="heading"></app-row>
   </div>
 </div>

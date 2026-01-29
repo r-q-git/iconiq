@@ -11,6 +11,6 @@ export class SearchComponent {
   iconService: IconServiceService = inject(IconServiceService);
 
   handleSearch(): void {
-    this.iconService.getIconByName(this.iconName);
+    this.iconService.setSearchWord(this.iconName);
   }
 }

@@ -24,14 +24,10 @@ import { FormsModule } from '@angular/forms';
     RowComponent,
     BoxComponent,
     TabbarComponent,
-    TabComponent
+    TabComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideHttpClient()],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

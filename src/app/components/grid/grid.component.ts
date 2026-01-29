@@ -8,16 +8,12 @@ import { IconServiceService } from 'src/services/icon-service.service';
   styles: [],
 })
 export class GridComponent {
-  isSearch: boolean = false;
   searchIcons: Icon[] = [];
-  headings = ['AI', 'Heart', 'Moon', 'Star'];
+  list = ["AI", "Computer", "Heart", "Moon"]
 
   constructor(private iconService: IconServiceService) {}
 
-  ngOnInit() {
-    this.iconService.icons$.subscribe((newIcons) => {
-      this.searchIcons = newIcons;
-      this.isSearch = this.searchIcons.length > 0 ? true : false;
-    });
-  }
+
+
+
 }
