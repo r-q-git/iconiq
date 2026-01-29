@@ -14,10 +14,9 @@ export class SearchComponent {
   handleSearch(): void {
     this.iconService.setSearchWord(this.iconName);
     this.iconService.setSearchStatus();
-    this.iconService.isSearch$.subscribe((value) => (this.isSearch = value));
   }
 
   handleCross() {
-    this.iconName = "";
+    this.iconName = '';
   }
 }
